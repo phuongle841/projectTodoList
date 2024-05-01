@@ -1,4 +1,76 @@
+:root {
+  --border: 1px solid #333;
+  --gap: 10px;
+  --padding: 20px;
+  --borderRadiusLarge: 20px;
+  --borderRadiusSmall: 5px;
+}
 * {
   color: #1e0342;
   font-size: 20px;
+  border: var(--border);
+  padding: 0%;
+  margin: 0%;
+  box-sizing: border-box;
+}
+
+html {
+  height: 100vh;
+  background-image: url("Background.jpg");
+  background-size: cover;
+}
+body {
+  height: 100%;
+  padding: var(--padding);
+}
+.container {
+  display: grid;
+  height: 100%;
+  grid-template-columns: 1fr 2fr;
+  gap: var(--gap);
+  padding: var(--padding);
+}
+.container > div {
+  border-radius: var(--borderRadiusLarge);
+}
+.navigateBar {
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap);
+  padding: var(--padding);
+}
+.navigateBar > div > div {
+  transition: all ease 0.8s;
+  border-radius: var(--borderRadiusSmall);
+  padding: 5px;
+}
+
+.navigateBar > div > div:hover {
+  background-color: #a3d8ff;
+}
+.navigateBar > div {
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap);
+}
+.content {
+  background-color: #fff000;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr;
+  padding: var(--padding);
+  gap: var(--gap);
+}
+.content > div {
+  background-color: #a3d8ff;
+}
+#MainTable {
+}
+.Section {
+  overflow-y: scroll;
+  height: 100%;
+}
+
+#sideTable {
+  grid-row: span 1;
 }
