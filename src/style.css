@@ -6,71 +6,115 @@
   --borderRadiusSmall: 5px;
 }
 * {
-  color: #1e0342;
-  font-size: 20px;
-  border: var(--border);
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
   padding: 0%;
   margin: 0%;
+  font-size: 20px;
+  color: #1d2b53;
   box-sizing: border-box;
 }
-
 html {
   height: 100vh;
   background-image: url("Background.jpg");
   background-size: cover;
 }
 body {
-  height: 100%;
   padding: var(--padding);
 }
 .container {
   display: grid;
-  height: 100%;
   grid-template-columns: 1fr 2fr;
   gap: var(--gap);
   padding: var(--padding);
-}
-.container > div {
-  border-radius: var(--borderRadiusLarge);
 }
 .navigateBar {
   display: flex;
   flex-direction: column;
   gap: var(--gap);
-  padding: var(--padding);
-}
-.navigateBar > div > div {
-  transition: all ease 0.8s;
-  border-radius: var(--borderRadiusSmall);
-  padding: 5px;
-}
-
-.navigateBar > div > div:hover {
+  border: var(--border);
+  border-radius: var(--borderRadiusLarge);
+  margin: var(--padding);
   background-color: #a3d8ff;
+  box-shadow: 1px 10px 10px #978c8c;
+  padding: var(--padding);
 }
 .navigateBar > div {
   display: flex;
   flex-direction: column;
   gap: var(--gap);
 }
-.content {
+.navigateBar > div > div {
+  border-radius: var(--borderRadiusSmall);
+  padding: 5px;
+}
+.navigateBar > div > div:hover {
   background-color: #fff000;
+}
+.content {
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 1fr;
   padding: var(--padding);
   gap: var(--gap);
 }
-.content > div {
-  background-color: #a3d8ff;
-}
 #MainTable {
+  height: 812px;
+  overflow-y: auto;
+  background-color: #a3d8ff;
+  border: var(--border);
+  box-shadow: 1px 10px 10px #978c8c;
+  border-top-left-radius: var(--borderRadiusLarge);
+  border-bottom-left-radius: var(--borderRadiusLarge);
 }
 .Section {
-  overflow-y: scroll;
-  height: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap);
+  padding: var(--gap);
 }
-
+.Section > h2 {
+  padding: var(--borderRadiusSmall);
+}
+.ShortReview {
+  display: flex;
+  flex-direction: column;
+  padding: var(--gap);
+  gap: var(--gap);
+}
+.ShortReview > div {
+  border-radius: var(--borderRadiusSmall);
+  padding: 3px;
+}
+.ShortReview > div:hover {
+  background-color: #fff000;
+}
 #sideTable {
-  grid-row: span 1;
+  height: 812px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  background-color: #a3d8ff;
+  border: var(--border);
+  box-shadow: 1px 10px 10px #978c8c;
+  padding: var(--gap);
+  border-top-right-radius: var(--borderRadiusLarge);
+  border-bottom-right-radius: var(--borderRadiusLarge);
+}
+.TodoContent {
+  display: flex;
+  flex-direction: column;
+  gap: var(--borderRadiusSmall);
+  padding: var(--gap);
+}
+.Part {
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap);
+  padding: var(--gap);
+}
+.Part > h2 {
+  padding: var(--borderRadiusSmall);
+}
+.Part > p {
+  padding-left: calc(var(--borderRadiusSmall) * 2);
 }
