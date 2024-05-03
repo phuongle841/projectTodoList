@@ -11,7 +11,7 @@ class toDoItem {
     this.dueDate = Infinity;
     this.priority = 3;
     this.note = "";
-    this.status = "";
+    this.status = false;
   }
 }
 

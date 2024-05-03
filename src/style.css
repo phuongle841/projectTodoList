@@ -106,15 +106,15 @@ body {
   gap: var(--borderRadiusSmall);
   padding: var(--gap);
 }
-.Part {
+#sideTable > div {
   display: flex;
   flex-direction: column;
   gap: var(--gap);
   padding: var(--gap);
 }
-.Part > h2 {
+#sideTable > div > h2 {
   padding: var(--borderRadiusSmall);
 }
-.Part > p {
+#sideTable > div > p {
   padding-left: calc(var(--borderRadiusSmall) * 2);
 }
