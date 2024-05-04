@@ -9,38 +9,39 @@
     <div class="container">
       <div class="navigateBar">
         <div class="todo">
+          <h2>Personal change</h2>
           <div class="addTask">
-            <p>Search</p>
+            <p>New todo</p>
+          </div>
+          <div id="addProject">
+            <p>New project</p>
           </div>
           <div class="today"><p>Today</p></div>
           <div class="upcoming"><p>Upcoming</p></div>
         </div>
         <div class="projects">
+          <h2>Projects</h2>
           <div class="fitness">Fitness</div>
           <div class="groceries">Groceries</div>
           <div class="appointment">Appointment</div>
         </div>
         <div class="teams">
+          <h2>System news</h2>
           <div class="newBrand"><p>New Brand</p></div>
           <div class="websiteUpdate">Website Update</div>
           <div class="productRoadmap">Product Roadmap</div>
         </div>
       </div>
       <div class="content">
-        <div id="MainTable">
-          <div class="Section">
-            <h2>Title</h2>
-            <div class="ShortReview">
-              <div class="">clean the house</div>
-              <div class="">Finish homework</div>
-              <div class="">Go out with friend</div>
-            </div>
-          </div>
-        </div>
+        <div id="MainTable"></div>
         <div id="sideTable">
           <div id="Tittle">
             <h2>Tittle</h2>
             <p>this is the title</p>
+          </div>
+          <div id="Description">
+            <h2>Description</h2>
+            <p>this is the description</p>
           </div>
           <div id="Due">
             <h2>Due date:</h2>
@@ -50,22 +51,44 @@
             <h2>Priority:</h2>
             <p>3</p>
           </div>
-          <div id="Description">
-            <h2>Description</h2>
-            <p>this is the description</p>
-          </div>
-          <div id="Status">
-            <h2>
-              Status
-              <input type="checkbox" name="Status" id="Status" />
-            </h2>
-          </div>
           <div id="Note">
             <h2>Note</h2>
             <p>There is no note for this todo-list</p>
           </div>
+          <div id="Status">
+            <h2>Status</h2>
+            <p>not done yet</p>
+          </div>
         </div>
       </div>
     </div>
+    <dialog id="favDialog">
+      <form>
+        <p>
+          <legend>
+            <label for="title" required>Title of the book</label>
+            <input type="text" name="title" id="title" />
+          </legend>
+          <legend>
+            <label for="author" required>Author of the book</label>
+            <input type="text" name="author" id="author" />
+          </legend>
+          <legend>
+            <label for="noOfPage" required>Number of pages</label>
+            <input type="number" name="noOfPage" id="noOfPage" />
+          </legend>
+          <legend class="checkbox">
+            <label for="read">Status</label>
+            <input type="checkbox" id="read" name="read" checked />
+          </legend>
+        </p>
+        <div class="bottomButtons">
+          <button value="cancel" formmethod="dialog">Cancel</button>
+          <button id="confirmBtn" value="default" formnovalidate>
+            Confirm
+          </button>
+        </div>
+      </form>
+    </dialog>
   </body>
 </html>

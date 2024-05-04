@@ -46,6 +46,17 @@ const noteChanger = {
   },
 };
 
+const statusChanger = {
+  changeStatus(status) {
+    if (status == true) {
+      this.status = true;
+    }
+    if (status == false) {
+      this.status = false;
+    }
+  },
+};
+
 Object.assign(toDoItem.prototype, tittleChanger);
 Object.assign(toDoItem.prototype, descriptionChanger);
 Object.assign(toDoItem.prototype, dueDateChanger);

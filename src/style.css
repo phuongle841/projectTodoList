@@ -28,9 +28,11 @@ body {
   padding: var(--padding);
 }
 .navigateBar {
+  height: 812px;
+  overflow-y: auto;
   display: flex;
   flex-direction: column;
-  gap: var(--gap);
+  gap: var(--borderRadiusLarge);
   border: var(--border);
   border-radius: var(--borderRadiusLarge);
   margin: var(--padding);
@@ -117,4 +119,17 @@ body {
 }
 #sideTable > div > p {
   padding-left: calc(var(--borderRadiusSmall) * 2);
+}
+dialog {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  padding: var(--padding);
+}
+dialog > div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }

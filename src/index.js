@@ -1,20 +1,18 @@
-import { getTime, isThisSecond, time } from "date-fns";
-import { toDoItem } from "./toDoItem";
-import { Project } from "./Project";
-import { ProjectList } from "./ProjectList";
-
-import { createSection } from "./Section";
 import "./style.css";
+import { displayProjects } from "./displayProjectList";
+displayProjects();
 
-let MainTable = document.querySelector("#MainTable");
-let defaultProject = new Project("The Odin Project");
-const readIntro = new toDoItem("Read Intro");
-const readAssignment = new toDoItem("Read Assignment");
-const finishQuestions = new toDoItem("Finish Question");
-defaultProject.addTodoItem(readIntro);
-defaultProject.addTodoItem(readAssignment);
-defaultProject.addTodoItem(finishQuestions);
+const showButton = document.getElementById("addProject");
+const favDialog = document.getElementById("favDialog");
+const confirmBtn = favDialog.querySelector("#confirmBtn");
 
-// create section for main table
-let section = createSection(defaultProject);
-MainTable.appendChild(section.Section);
+console.log(showButton);
+console.log(favDialog);
+
+showButton.addEventListener("click", () => {
+  favDialog.showModal();
+});
+confirmBtn.addEventListener("click", (event) => {
+  event.preventDefault();
+  favDialog.close();
+});
