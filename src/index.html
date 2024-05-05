@@ -10,7 +10,7 @@
       <div class="navigateBar">
         <div class="todo">
           <h2>Personal change</h2>
-          <div class="addTask">
+          <div id="addTask">
             <p>New todo</p>
           </div>
           <div id="addProject">
@@ -62,31 +62,67 @@
         </div>
       </div>
     </div>
-    <dialog id="favDialog">
+
+    <dialog id="TodoDialog">
       <form>
-        <p>
-          <legend>
-            <label for="title" required>Title of the book</label>
-            <input type="text" name="title" id="title" />
-          </legend>
-          <legend>
-            <label for="author" required>Author of the book</label>
-            <input type="text" name="author" id="author" />
-          </legend>
-          <legend>
-            <label for="noOfPage" required>Number of pages</label>
-            <input type="number" name="noOfPage" id="noOfPage" />
-          </legend>
-          <legend class="checkbox">
-            <label for="read">Status</label>
-            <input type="checkbox" id="read" name="read" checked />
-          </legend>
-        </p>
+        <legend>
+          <label for="title">Todo's title</label>
+          <input type="text" name="title" id="title" required />
+          <p></p>
+        </legend>
+        <legend>
+          <label for="description">Description</label>
+          <input type="text" name="description" id="description" />
+        </legend>
+        <legend>
+          <label for="dueDate">dueDate</label>
+          <input type="date" name="dueDate" id="dueDate" />
+        </legend>
+        <legend>
+          <label for="priority">priority</label>
+          <input
+            type="number"
+            name="priority"
+            id="priority"
+            min="1"
+            max="3"
+            value="3"
+          />
+        </legend>
+        <legend>
+          <label for="note">Note</label>
+          <input type="text" name="note" id="note" />
+        </legend>
+        <legend>
+          <label for="status">Status:</label>
+          <select name="status" id="status">
+            <option value="done">Done</option>
+            <option value="notDone">Not done</option>
+          </select>
+        </legend>
+        <legend>
+          <label for="belong">add into project:</label>
+          <select name="belong" id="belong"></select>
+        </legend>
         <div class="bottomButtons">
-          <button value="cancel" formmethod="dialog">Cancel</button>
-          <button id="confirmBtn" value="default" formnovalidate>
-            Confirm
-          </button>
+          <input id="submitTodo" type="submit" value="submit" />
+        </div>
+      </form>
+    </dialog>
+
+    <dialog id="ProjectDialog">
+      <form>
+        <legend>
+          <label for="title">Todo's title</label>
+          <input type="text" name="title" id="title" required />
+          <p></p>
+        </legend>
+        <legend>
+          <label for="description">Description</label>
+          <input type="text" name="description" id="description" />
+        </legend>
+        <div class="bottomButtons">
+          <input id="submitProject" type="submit" value="submit" />
         </div>
       </form>
     </dialog>

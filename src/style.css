@@ -125,11 +125,42 @@ dialog {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  display: flex;
   padding: var(--padding);
+  border: var(--border);
+  border-radius: var(--borderRadiusSmall);
 }
-dialog > div {
+form {
   display: flex;
   flex-direction: column;
-  align-items: center;
+  gap: var(--borderRadiusLarge);
+}
+form > legend {
+  display: flex;
+  gap: var(--gap);
+  flex-direction: column;
+  justify-content: flex-start;
+}
+input,
+select {
+  background-color: transparent;
+  padding: 5px;
+  outline: none;
+  border-radius: 5px;
+  border: var(--border);
+}
+input:focus,
+select:focus {
+  border: 1px solid #ff1e00;
+}
+.bottomButtons {
+  display: flex;
+
+  justify-content: center;
+}
+.bottomButtons > input {
+  width: min-content;
+  padding: var(--borderRadiusSmall);
+  border: var(--border);
+  border-radius: 5px;
+  background-color: #a3d8ff;
 }

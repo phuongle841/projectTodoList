@@ -62,5 +62,6 @@ Object.assign(toDoItem.prototype, descriptionChanger);
 Object.assign(toDoItem.prototype, dueDateChanger);
 Object.assign(toDoItem.prototype, priorityChanger);
 Object.assign(toDoItem.prototype, noteChanger);
+Object.assign(toDoItem.prototype, statusChanger);
 
 export { toDoItem };
