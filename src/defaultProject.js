@@ -2,8 +2,8 @@ import { Project } from "./Project";
 import { toDoItem } from "./toDoItem";
 import { makeId } from "./randomString";
 
-function createDefaultProject() {
-  let project = new Project("The Odin Project");
+function createDefaultProject(title) {
+  let project = new Project(title);
 
   for (let i = 0; i < 3; i++) {
     const rndInt = Math.floor(Math.random() * 25) + 6;

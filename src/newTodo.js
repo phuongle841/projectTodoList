@@ -1,14 +1,12 @@
-import { customSelectProject } from "./selectProjectBox";
 import { toDoItem } from "./toDoItem";
+import { displayProjects } from "./displayProjectList";
 
-function addTodo() {
+function addTodo(projectList) {
   // add project temporary
   const showButton = document.getElementById("addTask");
   const projectDialog = document.getElementById("TodoDialog");
   const confirmBtn = projectDialog.querySelector("#submitTodo");
 
-  let values = [];
-  const todo = new toDoItem("");
   const title = projectDialog.querySelector("#title");
   const description = projectDialog.querySelector("#description");
   const dueDate = projectDialog.querySelector("#dueDate");
@@ -17,15 +15,9 @@ function addTodo() {
   const status = projectDialog.querySelector("#status");
   const belong = projectDialog.querySelector("#belong");
 
-  values.push(title);
-  values.push(description);
-  values.push(dueDate);
-  values.push(priority);
-  values.push(note);
-  values.push(status);
-  values.push(belong);
+  const todo = new toDoItem("");
 
-  function checkValid() {
+  function checkTitle() {
     let unValid = title.parentNode.querySelector("p");
     if (title.value == "") {
       unValid.innerHTML = `please input title for todo!!`;
@@ -35,16 +27,63 @@ function addTodo() {
     return true;
   }
 
+  function checkDueDate() {
+    let unValid = dueDate.parentNode.querySelector("p");
+    if (dueDate.value == "") {
+      unValid.innerHTML = `please input date for dueDate!!`;
+      return false;
+    }
+    unValid.innerHTML = ``;
+    return true;
+  }
+
+  function checkValid() {
+    return checkTitle() && checkDueDate();
+  }
+
   showButton.addEventListener("click", () => {
     projectDialog.showModal();
   });
+  function tittleChanger(newTitle) {
+    todo.changeTittle(newTitle);
+  }
+  function descriptionChanger(newDescription) {
+    todo.changeDescription(newDescription);
+  }
+  function dueDateChanger(newDate) {
+    todo.changeDate(newDate);
+  }
+  function priorityChanger(newPriority) {
+    todo.changePriority(newPriority);
+  }
+  function noteChanger(newNote) {
+    todo.changeNote(newNote);
+  }
+  function statusChanger(status) {
+    todo.changeStatus(status);
+  }
+
+  function takeInput() {
+    tittleChanger(title.value);
+    descriptionChanger(description.value);
+    dueDateChanger(dueDate.value);
+    priorityChanger(priority.value);
+    noteChanger(note.value);
+    statusChanger(status.value);
+    projectList.List.forEach((element) => {
+      if (element.project.title == belong.value) {
+        element.project.addTodoItem(todo);
+      }
+    });
+    displayProjects(projectList);
+    console.log(projectList.List);
+  }
   confirmBtn.addEventListener("click", (event) => {
     event.preventDefault();
-    // check the valid of the box
-    let Valid = checkValid();
-    if (Valid == false) {
+    if (checkValid() == false) {
       return;
     }
+    takeInput();
     projectDialog.close();
   });
 

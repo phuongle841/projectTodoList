@@ -1,21 +1,9 @@
-import { ProjectList } from "./ProjectList";
-import { createDefaultProject } from "./defaultProject";
-
 import { createSection } from "./Section";
 import { customSelectProject } from "./selectProjectBox";
 
-function displayProjects() {
-  const projectList = new ProjectList();
-
+function displayProjects(projectList) {
   let MainTable = document.querySelector("#MainTable");
-
-  let defaultProject = createDefaultProject();
-  let defaultProject2 = createDefaultProject();
-  let defaultProject3 = createDefaultProject();
-
-  projectList.addProject(defaultProject);
-  projectList.addProject(defaultProject2);
-  projectList.addProject(defaultProject3);
+  MainTable.innerHTML = "";
 
   projectList.List.forEach((element) => {
     // create section for main table

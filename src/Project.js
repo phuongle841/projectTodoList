@@ -10,6 +10,9 @@ class Project {
   get todoList() {
     return this.todoList;
   }
+  get title() {
+    return this.title;
+  }
 }
 
 const todoAdder = {
