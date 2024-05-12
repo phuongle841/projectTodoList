@@ -44,6 +44,7 @@ function addTodo(projectList) {
   showButton.addEventListener("click", () => {
     projectDialog.showModal();
   });
+
   function tittleChanger(newTitle) {
     todo.changeTittle(newTitle);
   }
@@ -70,13 +71,14 @@ function addTodo(projectList) {
     priorityChanger(priority.value);
     noteChanger(note.value);
     statusChanger(status.value);
+
     projectList.List.forEach((element) => {
       if (element.project.title == belong.value) {
         element.project.addTodoItem(todo);
       }
     });
+
     displayProjects(projectList);
-    console.log(projectList.List);
   }
   confirmBtn.addEventListener("click", (event) => {
     event.preventDefault();

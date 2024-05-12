@@ -22,6 +22,9 @@ const tittleChanger = {
 };
 const descriptionChanger = {
   changeDescription(newDescription) {
+    if (newDescription == "") {
+      newDescription = `This todo-item don't have description`;
+    }
     this.description = newDescription;
   },
 };
@@ -42,6 +45,9 @@ const priorityChanger = {
 
 const noteChanger = {
   changeNote(newNote) {
+    if (newNote == "") {
+      newNote = `This todo-item don't have note`;
+    }
     this.note = newNote;
   },
 };
