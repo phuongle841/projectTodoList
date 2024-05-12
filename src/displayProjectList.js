@@ -5,7 +5,6 @@ function displayProjects(projectList) {
   let MainTable = document.querySelector("#MainTable");
   MainTable.innerHTML = "";
 
-  console.log(projectList);
   projectList.List.forEach((element) => {
     // create section for main table
     let section = createSection(element.project);

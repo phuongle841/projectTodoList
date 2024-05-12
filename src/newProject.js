@@ -14,13 +14,25 @@ function addProject(projectList) {
 
   function checkTitle() {
     let unValid = title.parentNode.querySelector("p");
+    let valid = true;
+    projectList.List.forEach((element) => {
+      if (title.value == element.project.title) {
+        unValid.innerHTML = `Same title alert!!`;
+
+        console.log(element.project.title);
+        valid = false;
+        return false;
+      }
+    });
     if (title.value == "") {
+      valid = false;
       unValid.innerHTML = `please input title for project!!`;
       return false;
     }
     unValid.innerHTML = ``;
-    return true;
+    return valid;
   }
+
   function checkValid() {
     return checkTitle();
   }
@@ -41,7 +53,6 @@ function addProject(projectList) {
     descriptionChanger(description.value);
 
     // add project into projectList
-    console.log(project);
     projectList.addProject({ project });
 
     displayProjects(projectList);
