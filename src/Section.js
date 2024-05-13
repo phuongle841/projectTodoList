@@ -3,10 +3,10 @@
 // use factory
 
 import { capitalizeFirstLetter } from "./capitalizeFirstLetter";
-import { makeId } from "./randomString";
 
 function createSection(project) {
   let Section = document.createElement("div");
+
   Section.classList.add("Section");
 
   let h2 = document.createElement("h2");
@@ -50,11 +50,6 @@ function createSideTaleContent(parentNode, name, inner) {
   element.classList.add(`#${name}`);
   title.innerHTML = name;
   content.innerHTML = inner;
-}
-function createSideTaleContentCheckBox(parentNode, name, inner) {
-  let element = document.createElement("div");
-  let title = document.createElement("h2");
-  let content = document.createElement("input");
 }
 
 Object.assign(createSection.prototype, buildSideTable);

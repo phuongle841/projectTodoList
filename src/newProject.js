@@ -1,7 +1,7 @@
 import { displayProjects } from "./displayProjectList";
 import { Project } from "./Project";
 
-function addProject(projectList) {
+function addProject(projectList, observable) {
   // add project temporary
   const showButton = document.getElementById("addProject");
   const projectDialog = document.getElementById("ProjectDialog");
@@ -18,10 +18,8 @@ function addProject(projectList) {
     projectList.List.forEach((element) => {
       if (title.value == element.project.title) {
         unValid.innerHTML = `Same title alert!!`;
-
-        console.log(element.project.title);
         valid = false;
-        return false;
+        return valid;
       }
     });
     if (title.value == "") {
@@ -37,6 +35,10 @@ function addProject(projectList) {
     return checkTitle();
   }
 
+  function refreshInput() {
+    title.innerHTML = "";
+    description.innerHTML = "";
+  }
   showButton.addEventListener("click", () => {
     projectDialog.showModal();
   });
@@ -54,8 +56,7 @@ function addProject(projectList) {
 
     // add project into projectList
     projectList.addProject({ project });
-
-    displayProjects(projectList);
+    console.log(projectList);
   }
 
   confirmBtn.addEventListener("click", (event) => {
@@ -66,6 +67,7 @@ function addProject(projectList) {
     }
     takeInput();
     projectDialog.close();
+    observable.notify(projectList, observable);
   });
 
   projectDialog.addEventListener("click", function (event) {
